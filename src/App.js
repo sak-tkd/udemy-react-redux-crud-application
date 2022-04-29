@@ -1,59 +1,29 @@
-import React, {Component} from "react";
-
-// 属性の書き方例
-
-// 不要なタグを生まないためにReact.Fragmentを使う
+import React from "react";
+// これがクラスコンポーネント
 // class App extends Component {
 //   render(){
 //     return (
-//       <React.Fragment>
+//       <div>
 //         <label htmlFor="bar">bar</label>
 //         <input type="text" onChange={() => {console.log("I am clicked.")}} />
-//       </React.Fragment>
+//       </div>
 //     )
 //   }
 // }
 
-
-// for属性もJavaScriptの予約語とかぶってしまうので書き方が違う
-// Reactの制約でreturnで返すJSXは１つのタグでなければならないというものがあるのでdivで１つにしている
-class App extends Component {
-  render(){
-    return (
-      <div>
-        <label htmlFor="bar">bar</label>
-        <input type="text" onChange={() => {console.log("I am clicked.")}} />
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div>
+      <Cat />
+      <Cat />
+      <Cat />
+      <Cat />
+    </div>
+  ) 
 }
 
-// ■onChange
-// class App extends Component {
-//   render(){
-//     return <input type="text" onChange={() => {console.log("I am clicked.")}}/>
-//   }
-// }
-
-
-// ■inputでonClick
-// class App extends Component {
-//   render(){
-//     return <input type="text" onClick={() => {console.log("I am clicked.")}}/>
-//   }
-// }
-
-
-// JSXで変数やJavaScriptを使う
-// class App extends Component {
-//   render(){
-//     // 変数に格納した値を下記で使うというやり方もできる
-//     const greeting = "Hi, Tom!";
-
-//     // domという変数に入れて表示という書き方もできる
-//     const dom = <h1 className="foo">{greeting}</h1>
-//     return dom;
-//   }
-// }
+const Cat = () => {
+  return <div>Meow!</div>
+}
 
 export default App;
