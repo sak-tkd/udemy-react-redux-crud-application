@@ -12,13 +12,20 @@ import reportWebVitals from './reportWebVitals';
 // ここで作られるstoreはアプリケーションで唯一のものになる
 const store = createStore(reducer)
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
-registerServiceWorker();
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// );
+reportWebVitals();
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
 //   <React.StrictMode>
